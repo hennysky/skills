@@ -4,7 +4,7 @@ description: "将方案、项目计划和实施交接做成包含原生交互图
 license: MIT
 metadata:
   version: "1.1.1"
-  author: "可视化规划"
+  author: "hennysky"
 ---
 
 # 可视化规划
