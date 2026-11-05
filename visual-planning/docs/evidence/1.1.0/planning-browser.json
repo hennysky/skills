@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "ok": true,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "provenance": "current",
+  "artifact": {
+    "path": "output/visual-planning-1.1.0-release/规划页.html",
+    "sha256": "746973a5fcb13de6bb0350dfe7c1ba31328fb7b0889279a2e0b8b48a9ae3125a",
+    "bytes": 542545
+  },
+  "diagnostics": [],
+  "sidecars": {
+    "directory": "output/visual-planning-1.1.0-release/browser-check",
+    "receipt": "规划页.browser-check.json",
+    "files": []
+  },
+  "fullReport": "output/visual-planning-1.1.0-release/browser-check/"
+}

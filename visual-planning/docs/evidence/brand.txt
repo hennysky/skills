@@ -1,0 +1,5 @@
+
+> visual-planning@1.0.1 check:brand
+> node scripts/check-brand.mjs
+
+Neutral product identity passed: 223 files; copyright/license provenance preserved

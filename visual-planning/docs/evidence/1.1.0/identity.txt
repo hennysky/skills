@@ -1,0 +1,5 @@
+
+> visual-planning@1.1.0 check:identity
+> node scripts/release-identity.mjs
+
+{"name":"visual-planning","version":"1.1.0","status":"passed"}

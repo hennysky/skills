@@ -1,0 +1,152 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "拟议 CSV 导入流程",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": "csv-import.html"
+  },
+  "lanes": [
+    {
+      "id": "input",
+      "label": "输入与校验"
+    },
+    {
+      "id": "result",
+      "label": "校验结果与产物"
+    }
+  ],
+  "mainPath": [
+    "choose",
+    "parse",
+    "validate",
+    "aggregate",
+    "publish",
+    "done"
+  ],
+  "nodes": [
+    {
+      "id": "choose",
+      "lane": "input",
+      "col": 0,
+      "type": "external",
+      "label": "选择输入",
+      "sublabel": "本地只读 CSV"
+    },
+    {
+      "id": "parse",
+      "lane": "input",
+      "col": 1,
+      "type": "backend",
+      "label": "解析记录",
+      "sublabel": "逻辑序号与物理行"
+    },
+    {
+      "id": "validate",
+      "lane": "input",
+      "col": 2,
+      "type": "security",
+      "label": "全量校验",
+      "sublabel": "必填列与全部行"
+    },
+    {
+      "id": "aggregate",
+      "lane": "result",
+      "col": 2,
+      "type": "backend",
+      "label": "生成汇总",
+      "sublabel": "日期、分类、整数分"
+    },
+    {
+      "id": "publish",
+      "lane": "result",
+      "col": 3,
+      "type": "backend",
+      "label": "发布结果",
+      "sublabel": "暂存后整体发布"
+    },
+    {
+      "id": "done",
+      "lane": "result",
+      "col": 4,
+      "type": "external",
+      "label": "导入成功",
+      "sublabel": "金额与行数守恒"
+    },
+    {
+      "id": "errors",
+      "lane": "result",
+      "col": 1,
+      "type": "backend",
+      "label": "输出错误",
+      "sublabel": "错误行与代码；无汇总"
+    }
+  ],
+  "edges": [
+    {
+      "id": "choose-parse",
+      "from": "choose",
+      "to": "parse"
+    },
+    {
+      "id": "parse-validate",
+      "from": "parse",
+      "to": "validate",
+      "label": "解析通过"
+    },
+    {
+      "id": "parse-errors",
+      "from": "parse",
+      "to": "errors",
+      "label": "结构损坏",
+      "variant": "security",
+      "role": "error"
+    },
+    {
+      "id": "validate-errors",
+      "from": "validate",
+      "to": "errors",
+      "label": "有错误",
+      "variant": "security",
+      "role": "error"
+    },
+    {
+      "id": "validate-aggregate",
+      "from": "validate",
+      "to": "aggregate",
+      "label": "全部通过",
+      "variant": "emphasis"
+    },
+    {
+      "id": "aggregate-publish",
+      "from": "aggregate",
+      "to": "publish"
+    },
+    {
+      "id": "publish-done",
+      "from": "publish",
+      "to": "done",
+      "label": "写入成功",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "拟议范围",
+      "items": [
+        "全部节点与接口尚待实现",
+        "失败输出定位，修订输入副本后以新目录重跑"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "成功约束",
+      "items": [
+        "任一错误均禁止发布 summary",
+        "分组行数与金额分别对回整体"
+      ]
+    }
+  ]
+}

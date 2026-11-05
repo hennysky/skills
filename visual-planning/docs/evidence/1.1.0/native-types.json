@@ -1,0 +1,65 @@
+{
+  "output": "output/visual-refresh-1.1.0-native",
+  "results": [
+    {
+      "type": "architecture",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/architecture.html"
+    },
+    {
+      "type": "workflow",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/workflow.html"
+    },
+    {
+      "type": "sequence",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/sequence.html"
+    },
+    {
+      "type": "dataflow",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/dataflow.html"
+    },
+    {
+      "type": "lifecycle",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/lifecycle.html"
+    },
+    {
+      "type": "erd",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/erd.html"
+    },
+    {
+      "type": "class",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/class.html"
+    },
+    {
+      "type": "tree",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/tree.html"
+    },
+    {
+      "type": "timeline",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/timeline.html"
+    },
+    {
+      "type": "waterfall",
+      "exit": 0,
+      "receipt": "pass",
+      "html": "output/visual-refresh-1.1.0-native/waterfall.html"
+    }
+  ]
+}

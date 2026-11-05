@@ -1,0 +1,91 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "可视化规划实施路径",
+    "output": "planning-flow.html",
+    "locale": "zh-CN",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    {
+      "id": "delivery",
+      "label": "从依据到可独立安装的技能"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "evidence",
+      "lane": "delivery",
+      "col": 0,
+      "type": "backend",
+      "label": "核实依据",
+      "width": 164
+    },
+    {
+      "id": "engine",
+      "lane": "delivery",
+      "col": 1,
+      "type": "backend",
+      "label": "独立引擎",
+      "width": 164
+    },
+    {
+      "id": "page",
+      "lane": "delivery",
+      "col": 2,
+      "type": "frontend",
+      "label": "生成完整规划",
+      "width": 164
+    },
+    {
+      "id": "verify",
+      "lane": "delivery",
+      "col": 3,
+      "type": "security",
+      "label": "核验交付",
+      "width": 164
+    },
+    {
+      "id": "package",
+      "lane": "delivery",
+      "col": 4,
+      "type": "cloud",
+      "label": "打包安装",
+      "width": 164
+    }
+  ],
+  "edges": [
+    {
+      "id": "evidence-engine",
+      "from": "evidence",
+      "to": "engine",
+      "variant": "emphasis"
+    },
+    {
+      "id": "engine-page",
+      "from": "engine",
+      "to": "page",
+      "variant": "emphasis"
+    },
+    {
+      "id": "page-verify",
+      "from": "page",
+      "to": "verify",
+      "variant": "emphasis"
+    },
+    {
+      "id": "verify-package",
+      "from": "verify",
+      "to": "package",
+      "variant": "emphasis"
+    }
+  ],
+  "mainPath": [
+    "evidence",
+    "engine",
+    "page",
+    "verify",
+    "package"
+  ]
+}

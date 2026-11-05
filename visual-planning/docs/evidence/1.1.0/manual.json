@@ -1,0 +1,48 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "modes": [
+    {
+      "style": "editorial",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "style": "product",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "style": "swiss",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "style": "clean",
+      "width": 1440,
+      "scroll": 1440
+    }
+  ],
+  "theme": "light+dark",
+  "download": "可视化规划独立项目实施计划.png",
+  "scrollAnchor": "#section-6",
+  "artifact": "output/visual-planning-1.1.0-release/规划页.html",
+  "downloads": [
+    "手机长图.png",
+    "桌面长图.png"
+  ],
+  "mobileExport": "Clicked the first task label, exported its current tick, then restored it",
+  "mobileExportMetrics": {
+    "width": 390,
+    "clientWidth": 390,
+    "checked": 1
+  }
+}

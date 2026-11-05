@@ -1,0 +1,3 @@
+
+> visual-planning@1.0.1 check:validators
+> node scripts/generate-validators.mjs --check

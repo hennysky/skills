@@ -1,0 +1,24 @@
+
+> visual-planning@1.1.0 test
+> node --test tests/*.test.mjs
+
+✔ ordinary explainers retain their board layout (3.470792ms)
+✔ planning layout avoids stretched cards, keeps mobile navigation compact and preserves reading state (2624.293459ms)
+✔ canonical plan retains complete paragraphs, code and checklist while gaining navigation (1.250209ms)
+✔ unsupported structure and missing tasks fail instead of silently dropping implementation detail (0.374083ms)
+✔ independent local release never calls a remote updater (0.600792ms)
+✔ full planning delivery detects changes to DSH, diagram, candidate and HTML (2495.254292ms)
+✔ the whole Skill can package and run after copying away from the project (1551.127833ms)
+✔ independent project release identities stay in one namespace (2.096875ms)
+✔ packaged chart engine renders synthetic pie and bar data without a network (15.0245ms)
+✔ repeated ordinary table labels get distinct stable identities (2.943792ms)
+✔ source checklist completion survives parsing (0.663ms)
+✔ narrow expanded diagram initially fits all nodes and keeps controls reachable (2483.217667ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4123.647792

@@ -1,0 +1,22 @@
+
+> visual-planning@1.0.1 test
+> node --test tests/*.test.mjs
+
+✔ canonical plan retains complete paragraphs, code and checklist while gaining navigation (1.13975ms)
+✔ unsupported structure and missing tasks fail instead of silently dropping implementation detail (0.658417ms)
+✔ independent local release never calls a remote updater (0.795625ms)
+✔ full planning delivery detects changes to DSH, diagram, candidate and HTML (2133.062833ms)
+✔ the whole Skill can package and run after copying away from the project (1419.161291ms)
+✔ independent project release identities stay in one namespace (1.941375ms)
+✔ packaged chart engine renders synthetic pie and bar data without a network (14.691834ms)
+✔ repeated ordinary table labels get distinct stable identities (10.611959ms)
+✔ source checklist completion survives parsing (1.158791ms)
+✔ narrow expanded diagram initially fits all nodes and keeps controls reachable (2274.934292ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3653.890584

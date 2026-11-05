@@ -1,0 +1,32 @@
+{
+  "name": "visual-planning",
+  "version": "1.1.1",
+  "private": true,
+  "type": "module",
+  "description": "可视化规划：完整交互图引擎、待办清单、整页方案与实施交接。",
+  "license": "MIT",
+  "bin": {
+    "visual-plan": "./bin/visualplan.mjs",
+    "visualplan": "./bin/visualplan.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "check:brand": "node scripts/check-brand.mjs",
+    "check:validators": "node scripts/generate-validators.mjs --check",
+    "generate:validators": "node scripts/generate-validators.mjs",
+    "smoke": "node scripts/smoke-capabilities.mjs",
+    "package:skill": "python3 scripts/package_skill.py",
+    "check:identity": "node scripts/release-identity.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "simple-icons": "16.28.0"
+  },
+  "overrides": {
+    "fast-uri": "^3.1.9"
+  }
+}

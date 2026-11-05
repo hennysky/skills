@@ -1,0 +1,15 @@
+
+> visual-planning@1.1.0 smoke
+> node scripts/smoke-capabilities.mjs
+
+architecture: passed
+workflow: passed
+sequence: passed
+dataflow: passed
+lifecycle: passed
+erd: passed
+class: passed
+tree: passed
+timeline: passed
+waterfall: passed
+Evidence: output/visual-refresh-1.1.0-native

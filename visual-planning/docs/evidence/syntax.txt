@@ -1,0 +1,5 @@
+
+> visual-planning@1.0.1 check:syntax
+> node scripts/check-syntax.mjs
+
+Syntax passed: 111 JavaScript files

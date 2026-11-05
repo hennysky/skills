@@ -1,0 +1,2 @@
+examples/*.html linguist-generated=true -whitespace
+docs/evidence/exports/*.svg linguist-generated=true -whitespace
