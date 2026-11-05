@@ -1,6 +1,10 @@
 ---
 name: buddy-checkin
 description: 自动领取 WorkBuddy「Buddy加油站」所有可自动领取的积分（每日签到、Buddy出车奖励，并可查积分余额）。当用户说「领积分」「领一下加油站」「签到」「今天积分领了吗」「积分到账没」「重新登录加油站」时使用。首次使用需用户微信扫码登录一次，之后由技能自动创建/复用每日定时任务，全程无人值守。
+license: MIT
+metadata:
+  version: "1.0.0"
+  author: "hennysky"
 agent_created: true
 ---
 
