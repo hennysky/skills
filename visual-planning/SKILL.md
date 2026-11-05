@@ -3,7 +3,7 @@ name: visual-planning
 description: "将方案、项目计划和实施交接做成包含原生交互图、可勾选待办及完整正文的独立网页，同时交付 DSH Markdown；也可单独制作架构、流程、时序、数据流、状态、ER、类、树、时间线和耗时图。适用于需要图文一体的方案设计、规划页或可视化实施计划。触发词：可视化规划、visual-planning、画架构图、流程图、时序图、数据流图、ER图、类图、时间线、瀑布图、做规划页、方案可视化、实施计划网页。"
 license: MIT
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
   author: "hennysky"
 ---
 
