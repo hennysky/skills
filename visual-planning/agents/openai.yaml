@@ -1,4 +1,0 @@
-interface:
-  display_name: "可视化规划"
-  short_description: "把完整实施计划、交互流程图和待办清单生成网页与 DSH 交接文档"
-  default_prompt: "使用 $visual-planning 为当前项目生成包含交互图、待办清单和完整实施计划的可视化规划页，并交付 DSH Markdown。"

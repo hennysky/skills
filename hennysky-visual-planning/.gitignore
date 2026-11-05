@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+.visualplan/
+output/
+dist/
+__pycache__/
+distribution-manifest.json
+package-receipt.json
