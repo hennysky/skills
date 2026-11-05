@@ -7,6 +7,7 @@
 | 技能 | 版本 | 一句话说明 |
 |---|---|---|
 | [visual-planning](./visual-planning/) | 1.1.1 | 把方案和计划做成带原生交互图、可勾选待办的独立网页（10 种图型） |
+| [report-briefing](./report-briefing/) | 1.1.0 | 把工作内容做成能交出去的汇报：先出大纲、再填要点、最后生成汇报页，按六类汇报场景匹配对应的去 AI 味规则 |
 
 ---
 
@@ -16,15 +17,22 @@
 
 ### 安装到 WorkBuddy / Codex
 
-以 `visual-planning` 为例：
+每个技能都是独立文件夹，复制进去即可（以 `visual-planning` 为例）：
 
 ```bash
 mkdir -p ~/.workbuddy/skills
 cp -R visual-planning ~/.workbuddy/skills/
+```
+
+`visual-planning` 装完建议跑一次自检：
+
+```bash
 cd ~/.workbuddy/skills/visual-planning && node bin/visualplan.mjs doctor
 ```
 
-自检全部 `[ok]` 即安装成功，具体步骤见各技能内的 `安装说明.md`。
+自检全部 `[ok]` 即安装成功。`report-briefing` 只含 Markdown 与 HTML 模板，无需安装依赖，复制后重启客户端即可。
+
+各技能的详细步骤见其文件夹内的 `安装说明.md`。
 
 ### 在对话里使用
 
@@ -32,6 +40,8 @@ cd ~/.workbuddy/skills/visual-planning && node bin/visualplan.mjs doctor
 
 - 「用可视化规划，把这份方案做成规划页」
 - 「画一张数据流转架构图」
+- 「用汇报 skill 写本期双周汇报的大纲」
+- 「这份述职稿帮我看下有没有 AI 味」
 
 ---
 
