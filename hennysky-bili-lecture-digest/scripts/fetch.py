@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -116,6 +117,9 @@ def main():
     ap.add_argument("--keep", action="store_true", help="保留下载的中间文件")
     args = ap.parse_args()
 
+    for tool in ("ffmpeg", "ffprobe"):
+        if not shutil.which(tool):
+            die(f"缺少 {tool}。安装：brew install ffmpeg（装完再跑一次）")
     bvid, url = resolve_target(args.target)
     is_local = bvid is None
     meta = {}
@@ -169,7 +173,7 @@ def main():
             info("下载并转码…")
             download(aurl, wav, args.max_seconds)
         else:
-            if not shutil_which("yt-dlp"):
+            if not shutil.which("yt-dlp"):
                 die("取流失败，且本机没有 yt-dlp。安装：brew install yt-dlp")
             info("用 yt-dlp 兜底下载…")
             cmd = ["yt-dlp", "-f", "bestaudio", "--no-playlist", "-o", os.path.join(out_dir, "audio.%(ext)s"), url]
@@ -193,11 +197,6 @@ def main():
 
     info(f"完成：{out_dir}/  （音频 {got}s）")
     print(os.path.abspath(out_dir))
-
-
-def shutil_which(name):
-    from shutil import which
-    return which(name)
 
 
 if __name__ == "__main__":

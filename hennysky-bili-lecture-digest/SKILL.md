@@ -38,6 +38,14 @@ mkdir -p ~/models/whisper && curl -L -o ~/models/whisper/ggml-large-v3-turbo.bin
 
 模型路径可用 `WHISPER_MODEL` 覆盖。M1 Pro 参考速度：**约 1 小时音频 / 7 分钟转写**。
 
+装完先跑一次环境自检，缺什么会直接告诉你装什么：
+
+```bash
+python3 $SKILL/scripts/doctor.py
+```
+
+七项全 PASS（`yt-dlp` 可选，WARN 不影响）再往下走。
+
 ---
 
 ## 2. 流程
