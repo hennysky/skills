@@ -11,6 +11,7 @@
 | [hennysky-visual-planning](./hennysky-visual-planning/) | 1.1.3 | 把方案和计划做成带原生交互图、可勾选待办的独立网页（10 种图型） | Node.js ≥ 18 |
 | [hennysky-report-briefing](./hennysky-report-briefing/) | 1.1.3 | 把工作内容做成能交出去的汇报：先出大纲、再填要点、最后生成汇报页，按六类汇报场景匹配对应的去 AI 味规则 | 无 |
 | [hennysky-buddy-checkin](./hennysky-buddy-checkin/) | 1.0.1 | 自动领取 Buddy加油站里所有可自动领取的积分（每日签到 + Buddy出车奖励），并汇报余额 | Python + 首次联网装 Playwright |
+| [hennysky-bili-lecture-digest](./hennysky-bili-lecture-digest/) | 1.0.0 | 把 B 站视频转成可离线搜索的单文件 HTML 讲义：本地转写逐字稿、写拆解、生成页面并自检 | ffmpeg、whisper.cpp、1.5 GB 模型 |
 
 > 早期版本叫 `visual-planning` / `report-briefing` / `buddy-checkin`。装过旧版的，把旧文件夹删掉、按下面步骤重装一次即可，旧调用名仍然能命中。
 
@@ -38,10 +39,10 @@ mkdir -p ~/.workbuddy/skills
 cp -R hennysky-visual-planning ~/.workbuddy/skills/
 ```
 
-三个一起装：
+四个一起装：
 
 ```bash
-cp -R hennysky-visual-planning hennysky-report-briefing hennysky-buddy-checkin ~/.workbuddy/skills/
+cp -R hennysky-visual-planning hennysky-report-briefing hennysky-buddy-checkin hennysky-bili-lecture-digest ~/.workbuddy/skills/
 ```
 
 **文件夹名不要改。** 技能靠文件夹名识别，改名（比如变成 `hennysky-visual-planning 2`）会导致装不上。
@@ -76,6 +77,7 @@ cd ~/.workbuddy/skills/hennysky-visual-planning && node bin/visualplan.mjs docto
 - 「画一张数据流转架构图」
 - 「用汇报 skill 写本期双周汇报的大纲」
 - 「这份述职稿帮我看下有没有 AI 味」
+- 「把这个 B 站视频做成讲义」
 
 也可以叫英文名 `$hennysky-visual-planning`（旧名 `$visual-planning` 同样有效）。
 
