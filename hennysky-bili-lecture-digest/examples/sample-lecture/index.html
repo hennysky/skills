@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>样例：一场不浪费时间的复盘会 · 视频讲义</title>
+<style>
+:root{--paper:#fbf8f3;--ink:#1c1a17;--muted:#6f675b;--line:#e6ded1;--card:#fffdf9;--accent:#a8402a;--accent2:#2c5f63;--mark:#ffe9a8}
+html[data-theme=dark]{--paper:#14130f;--ink:#ece5d8;--muted:#9c9486;--line:#2d2922;--card:#1b1a15;--accent:#e0805f;--accent2:#7fb3b0;--mark:#6b5a1e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16.5px/1.9 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent2);text-underline-offset:3px}
+code{font:.88em ui-monospace,Menlo,monospace;background:rgba(127,127,127,.12);padding:.12em .38em;border-radius:4px;overflow-wrap:anywhere}
+#bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:99}
+.hero{border-bottom:1px solid var(--line);padding:64px 0 30px;background:radial-gradient(1200px 300px at 12% -10%,rgba(168,64,42,.06),transparent 60%)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 30px}
+.kicker{font-size:12px;letter-spacing:.22em;color:var(--accent);margin-bottom:18px}
+h1{font-family:"Songti SC","Noto Serif SC",Georgia,serif;font-size:clamp(32px,5vw,52px);line-height:1.18;margin:0 0 14px;font-weight:600}
+.sub{font-family:"Songti SC",serif;font-size:clamp(16px,2vw,20px);color:var(--muted);margin:0 0 26px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:13.5px;color:var(--muted);margin:0;padding:0;list-style:none}
+.meta b{color:var(--ink);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:30px 0 0}
+.st{background:var(--card);padding:15px 18px}
+.st .v{font-family:"Songti SC",serif;font-size:25px}
+.st .k{font-size:12px;color:var(--muted);margin-top:3px}
+.shell{display:grid;grid-template-columns:200px minmax(0,1fr);gap:58px;max-width:1100px;margin:0 auto;padding:44px 30px 90px}
+nav.toc{position:sticky;top:26px;align-self:start;font-size:13.5px;max-height:calc(100vh - 50px);overflow:auto}
+nav.toc h6{font-size:11px;letter-spacing:.2em;color:var(--muted);margin:0 0 12px}
+nav.toc a{display:block;color:var(--muted);text-decoration:none;padding:5px 0 5px 12px;border-left:2px solid transparent;line-height:1.5}
+nav.toc a:hover{color:var(--ink)}nav.toc a.on{color:var(--accent);border-left-color:var(--accent);font-weight:600}
+.themebtn{margin-top:22px;font:12px inherit;color:var(--muted);background:none;border:1px solid var(--line);border-radius:20px;padding:6px 12px;cursor:pointer}
+main{min-width:0}
+section{margin-bottom:70px;scroll-margin-top:24px;min-width:0}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:26px}
+.sec-no{font-family:"Songti SC",serif;font-size:13px;color:var(--accent);letter-spacing:.14em}
+h2.sec-t{font-family:"Songti SC",serif;font-size:clamp(24px,3.2vw,30px);margin:0;font-weight:600}
+h2{font-family:"Songti SC",serif;font-size:22px;margin:40px 0 12px;font-weight:600;line-height:1.45;scroll-margin-top:20px}
+h3{font-family:"Songti SC",serif;font-size:18.5px;margin:30px 0 8px}
+h4{font-size:16px;margin:24px 0 8px}
+p{margin:0 0 14px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.note{border-left:3px solid var(--accent);background:rgba(168,64,42,.05);padding:12px 16px;border-radius:0 8px 8px 0;color:var(--muted);font-size:15px;margin:0 0 20px}
+pre{background:rgba(127,127,127,.08);padding:14px 16px;border-radius:10px;overflow:auto;font-size:12.5px;line-height:1.7;border:1px solid var(--line);min-width:0;max-width:100%}
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--line);border-radius:10px;min-width:0;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:480px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:rgba(127,127,127,.06);font-weight:600;font-size:13px;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.formula{display:flex;justify-content:center;align-items:center;margin:6px 0 20px;padding:14px 10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:"Times New Roman",serif;font-size:21px;overflow-x:auto}
+.formula .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 5px;line-height:1.25}
+.formula .frac .n{border-bottom:1.2px solid currentColor;padding:0 5px 2px}
+.formula .frac .d{padding:2px 5px 0}
+.formula .rad .rb{border-top:1.2px solid currentColor;padding:0 3px;margin-left:1px}
+sub,sup{font-size:.68em;line-height:0}
+.tbar{position:sticky;top:0;z-index:5;background:var(--paper);padding:12px 0;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--line);margin-bottom:8px}
+.tbar input{flex:1;min-width:0;font:14px inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 13px;outline:none}
+.tbar input:focus{border-color:var(--accent2)}
+.tbar .count{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.seg{display:grid;grid-template-columns:58px minmax(0,1fr);gap:16px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.seg[hidden]{display:none}
+.seg .ts{font:12px/1.9 ui-monospace,Menlo,monospace;color:var(--accent2);opacity:.75;padding-top:3px;cursor:copy}
+.seg p{margin:0;font-size:15.5px;line-height:1.95}
+.seg mark{background:var(--mark);color:inherit}
+footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--muted);font-size:13px}
+#top{position:fixed;right:24px;bottom:24px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;display:none}
+#top.show{display:block}
+@media (max-width:900px){
+  html,body{overflow-x:clip}
+  .shell{grid-template-columns:minmax(0,1fr);gap:0;padding-top:26px}
+  nav.toc{position:static;max-height:none;margin-bottom:30px;border-bottom:1px solid var(--line);padding-bottom:14px}
+  nav.toc a{display:inline-block;border-left:0;border-bottom:2px solid transparent;padding:4px 10px 4px 0}
+  nav.toc a.on{border-left:0;border-bottom-color:var(--accent)}
+  .st:last-child{grid-column:1/-1}
+}
+@media print{nav.toc,.tbar,#top,#bar,.themebtn{display:none!important}.shell{grid-template-columns:1fr;padding:0}body{font-size:11.5pt}table,.formula{page-break-inside:avoid}}
+</style></head><body><div id="bar"></div>
+<header class="hero"><div class="wrap">
+  <div class="kicker">视频讲义 · 自动生成</div>
+  <h1>样例：一场不浪费时间的复盘会</h1>
+  <p class="sub">示例 UP 主 · 40m00s · 文字稿与拆解</p>
+  <ul class="meta"><li>UP 主 <b>示例 UP 主</b></li><li>发布 <b>2026-11-01</b></li><li><b>DEMO0000000</b></li></ul>
+  <div class="stats">
+    <div class="st"><div class="v">40m00s</div><div class="k">视频时长</div></div>
+    <div class="st"><div class="v">819</div><div class="k">逐字稿字数</div></div>
+    <div class="st"><div class="v">31</div><div class="k">带时间戳段落</div></div>
+    <div class="st"><div class="v">2026-11-23</div><div class="k">生成日期</div></div>
+  </div>
+</div></header>
+<div class="shell">
+<nav class="toc"><h6>目录</h6>
+  <a href="#analysis">拆解</a>
+  <a href="#s1">一句话结论</a><a href="#s2">这是什么形态的内容</a><a href="#s3">观看地图</a><a href="#s4">逐段拆解</a><a href="#s5">这套内容的能力边界（我补的）</a><a href="#s6">可直接抄走的动作</a><a href="#s7">名词速查</a>
+  <a href="#transcript">逐字稿</a>
+  <button class="themebtn" id="theme">切换深色</button>
+</nav>
+<main>
+  <section id="analysis">
+    <div class="sec-head"><span class="sec-no">01</span><h2 class="sec-t">拆解</h2></div>
+    <div class="note">本样例内容为虚构，仅用于展示生成页面的结构：目录、表格、公式、逐字稿搜索。</div>
+<h2 id="s1">一句话结论</h2>
+<p>这是一堂讲「复盘会怎么开」的方法课，核心不是流程，而是<strong>把会议产出从记录改成决定</strong>：一次会只解决一个问题，最多定五条带责任人和验收指标的动作。</p>
+<h2 id="s2">这是什么形态的内容</h2>
+<div class="tw"><table><thead><tr><th>项目</th><th>事实</th></tr></thead><tbody><tr><td>形式</td><td>单人口播，无幻灯片</td></tr><tr><td>时长</td><td>40 分钟（样例）</td></tr><tr><td>结构</td><td>三段式：对齐事实 → 找原因 → 定动作</td></tr><tr><td>数据</td><td>无数据案例，靠经验值（如「三条动作算合格」）</td></tr></tbody></table></div>
+<h2 id="s3">观看地图</h2>
+<div class="tw"><table><thead><tr><th>时间</th><th>内容</th><th>值得看吗</th></tr></thead><tbody><tr><td>00:00</td><td>开场：复盘会为什么无效</td><td>看</td></tr><tr><td>02:10</td><td>三段式框架</td><td>必看</td></tr><tr><td>03:05</td><td>对齐事实与口径</td><td>必看</td></tr><tr><td>06:40</td><td>连问三个为什么</td><td>看</td></tr><tr><td>10:00</td><td>动作三要素</td><td><strong>最实用</strong></td></tr><tr><td>15:10</td><td>会后 24 小时</td><td>看</td></tr><tr><td>19:20</td><td>一次会只解决一个问题</td><td>看</td></tr><tr><td>28:00</td><td>怎么判断会议有没有用</td><td>看</td></tr></tbody></table></div>
+<h2 id="s4">逐段拆解</h2>
+<h3>3.1 三段式：事实、原因、动作</h3>
+<ul><li><strong>对齐事实</strong>：会前冻结数据，会中不改数。最容易翻车的是「大家拿的不是同一张表」。</li><li><strong>找原因</strong>：连问三个为什么，但每个为什么必须有证据；没证据的标成假设，不进结论。</li><li><strong>定动作</strong>：每条动作必须带「谁、何时、看哪个数」，缺一项等于没定。</li></ul>
+<p>讲师给的上限是<strong>一场会最多五条动作</strong>，理由很直白：超过五条就执行不了。</p>
+<h3>3.2 一个反常识的取舍</h3>
+<p>复盘会不追求「讨论完所有问题」，而是<strong>一次只解决一个问题</strong>。选择标准是影响金额或频次，二者取大。</p>
+<h3>3.3 怎么判断有没有用</h3>
+<p>看两周后动作的落地率。经验值：三条以上算合格，五条全跑算优秀。一条都没跑，说明会上定的动作本身不成立。</p>
+<p>如果用落地率来量化：</p>
+<div class="formula">R<sub>action</sub> <span class="eq">=</span> <span class="frac"><span class="n">N<sub>done</sub></span><span class="d">N<sub>total</sub></span></span>×100%</div>
+<h2 id="s5">这套内容的能力边界（我补的）</h2>
+<div class="tw"><table><thead><tr><th>缺口</th><th>为什么要紧</th><th>补法</th></tr></thead><tbody><tr><td>没有讲跨部门冲突怎么处理</td><td>复盘最容易卡在互相甩锅</td><td>会前单独对齐，不在会上解决</td></tr><tr><td>经验值没有样本量</td><td>「三条算合格」缺乏依据</td><td>用自己团队的历史数据校准</td></tr><tr><td>没讲远程/异步复盘</td><td>分布式团队开不了会</td><td>改成文档先行 + 异步评论</td></tr></tbody></table></div>
+<h2 id="s6">可直接抄走的动作</h2>
+<ol><li>会前把数据冻结到同一张看板，会议中不改数。</li><li>每条动作必须写清「谁、何时、看哪个数」。</li><li>一场会最多定五条动作。</li><li>会后 24 小时内发出纪要，要求逐人确认。</li><li>两周后回看落地率，低于三条就复盘「动作为什么不成立」。</li></ol>
+<h2 id="s7">名词速查</h2>
+<div class="tw"><table><thead><tr><th>名词</th><th>一句话</th></tr></thead><tbody><tr><td>动作</td><td>带责任人、时间、验收指标的待办</td></tr><tr><td>落地率</td><td>两周后真正在跑的动作占比</td></tr><tr><td>假设</td><td>没有证据支撑的原因判断，不进结论</td></tr></tbody></table></div>
+  </section>
+  <section id="transcript">
+    <div class="sec-head"><span class="sec-no">02</span><h2 class="sec-t">逐字稿</h2></div>
+    <div class="note">自动转写，仅做术语机械替换，<strong>未逐句人工校对</strong>。点时间戳可复制。</div>
+    <div class="tbar"><input id="q" type="search" placeholder="搜索逐字稿…" autocomplete="off"><span class="count" id="cnt">31 段</span></div>
+    <div id="segs"><div class="seg" data-t="00:00"><span class="ts">00:00</span><p>今天不讲工具，讲一件事：为什么大部分复盘会开完了跟没开一样</p></div><div class="seg" data-t="00:42"><span class="ts">00:42</span><p>我见过最典型的复盘，是大家轮流说一遍这个月做了什么，然后老板总结两句，散会</p></div><div class="seg" data-t="01:30"><span class="ts">01:30</span><p>问题不在态度，在于会议的目标定错了：复盘会不是汇报会，它要产出的是决定，不是记录</p></div><div class="seg" data-t="02:10"><span class="ts">02:10</span><p>所以我把复盘会拆成三段：先对齐事实，再找原因，最后定动作</p></div><div class="seg" data-t="03:05"><span class="ts">03:05</span><p>第一段对齐事实，只有一件事要做：把口径统一，把数字对齐，谁的数字和谁的对不上，当场说清楚</p></div><div class="seg" data-t="04:20"><span class="ts">04:20</span><p>这里最容易翻车的地方，是大家拿的不是同一张表</p></div><div class="seg" data-t="05:15"><span class="ts">05:15</span><p>我们内部有个硬规定，复盘会开始前，数据必须在同一个看板上冻结，会议中不再改数</p></div><div class="seg" data-t="06:40"><span class="ts">06:40</span><p>第二段找原因，注意是找原因，不是找人</p></div><div class="seg" data-t="07:30"><span class="ts">07:30</span><p>找原因有个简单的办法，叫连问三个为什么，但要求是每个为什么都必须有证据</p></div><div class="seg" data-t="08:50"><span class="ts">08:50</span><p>没有证据的为什么，一律标成假设，不进结论</p></div><div class="seg" data-t="10:00"><span class="ts">10:00</span><p>第三段定动作，每个动作必须带三样东西：谁做、什么时候做完、做完看哪个数</p></div><div class="seg" data-t="11:30"><span class="ts">11:30</span><p>少了任何一样，这个动作就等于没定</p></div><div class="seg" data-t="12:40"><span class="ts">12:40</span><p>我通常要求一场复盘会最多定五条动作，超过五条基本执行不了</p></div><div class="seg" data-t="14:00"><span class="ts">14:00</span><p>接下来讲一个最容易忽略的环节：复盘会结束之后的二十四小时</p></div><div class="seg" data-t="15:10"><span class="ts">15:10</span><p>会后二十四小时内，纪要和动作清单必须发出去，而且要有明确的确认</p></div><div class="seg" data-t="16:30"><span class="ts">16:30</span><p>我们用的是笨办法，每个人在群里回一个收到，没回的人单独催</p></div><div class="seg" data-t="18:00"><span class="ts">18:00</span><p>再说一个反常识的点：复盘会不要追求把所有问题都讨论完</p></div><div class="seg" data-t="19:20"><span class="ts">19:20</span><p>一场会解决一个问题，比一场会碰十个问题有用得多</p></div><div class="seg" data-t="20:40"><span class="ts">20:40</span><p>那怎么选这一个问题？看它影响的金额或者频次，二者取大</p></div><div class="seg" data-t="22:00"><span class="ts">22:00</span><p>举个例子，上个月退款率涨了两个点，那这场会就只讨论退款率</p></div><div class="seg" data-t="23:30"><span class="ts">23:30</span><p>其他问题记下来，排进下一次，不要在会上发散</p></div><div class="seg" data-t="25:00"><span class="ts">25:00</span><p>还有一个细节，主持人不能是当事人</p></div><div class="seg" data-t="26:20"><span class="ts">26:20</span><p>当事人容易解释，主持人要负责推进，两个角色放一起，会就开成了辩解会</p></div><div class="seg" data-t="28:00"><span class="ts">28:00</span><p>最后讲讲怎么判断这场复盘会有没有用</p></div><div class="seg" data-t="29:10"><span class="ts">29:10</span><p>看两周后，那五条动作有几条真的在跑</p></div><div class="seg" data-t="30:30"><span class="ts">30:30</span><p>我们内部的经验值是三条以上算合格，五条全跑算优秀</p></div><div class="seg" data-t="32:00"><span class="ts">32:00</span><p>如果一条都没跑，那不是执行的问题，是会上定的动作本身不成立</p></div><div class="seg" data-t="33:40"><span class="ts">33:40</span><p>所以回到开头那句话：复盘会不是汇报会</p></div><div class="seg" data-t="35:00"><span class="ts">35:00</span><p>它唯一的价值，是把一次失败或者一次成功，变成下一次可以复用的动作</p></div><div class="seg" data-t="36:40"><span class="ts">36:40</span><p>今天就讲到这，下一次我们讲怎么把动作清单接进项目管理工具</p></div><div class="seg" data-t="38:20"><span class="ts">38:20</span><p>谢谢大家</p></div></div>
+  </section>
+</main>
+</div>
+<footer><div class="wrap">
+  <p>来源：样例：一场不浪费时间的复盘会</p>
+  <p>本页为自包含单文件，不依赖网络，可离线打开与打印。逐字稿由 whisper.cpp 自动转写，引用数字请以原视频为准。</p>
+</div></footer>
+<button id="top">↑</button>
+<script>
+(function(){
+  var bar=document.getElementById('bar'),top=document.getElementById('top');
+  addEventListener('scroll',function(){
+    var h=document.documentElement,s=h.scrollTop,m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?s/m*100:0)+'%'; top.classList.toggle('show',s>700);
+  },{passive:true});
+  top.onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+  var root=document.documentElement,btn=document.getElementById('theme');
+  var saved=localStorage.getItem('vpage-theme');
+  if(saved)root.dataset.theme=saved;
+  function sync(){btn.textContent=root.dataset.theme==='dark'?'切换浅色':'切换深色';}sync();
+  btn.onclick=function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('vpage-theme',root.dataset.theme);sync();};
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(l){l.classList.remove('on')});var i=secs.indexOf(e.target);if(i>=0)links[i].classList.add('on');}
+    })},{rootMargin:'-12% 0px -75% 0px'});
+    secs.forEach(function(s){if(s)io.observe(s)});
+  }
+  var q=document.getElementById('q'),cnt=document.getElementById('cnt');
+  var segs=[].slice.call(document.querySelectorAll('.seg'));
+  var raws=segs.map(function(s){return s.querySelector('p').textContent});
+  var total=segs.length,t;
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})};
+  q.addEventListener('input',function(){
+    clearTimeout(t);t=setTimeout(function(){
+      var k=q.value.trim().toLowerCase();
+      if(!k){segs.forEach(function(s,i){s.hidden=false;s.querySelector('p').innerHTML=raws[i]});cnt.textContent=total+' 段';return;}
+      var n=0;
+      segs.forEach(function(s,i){
+        var hit=raws[i].toLowerCase().indexOf(k)>=0;s.hidden=!hit;
+        if(hit){n++;var idx=raws[i].toLowerCase().indexOf(k),node=s.querySelector('p');
+          node.innerHTML=esc(raws[i].slice(0,idx))+'<mark>'+esc(raws[i].slice(idx,idx+k.length))+'</mark>'+esc(raws[i].slice(idx+k.length));}
+      });
+      cnt.textContent=n+' / '+total+' 段';
+    },120);
+  });
+  document.getElementById('segs').addEventListener('click',function(e){
+    var ts=e.target.closest('.ts');if(!ts)return;
+    navigator.clipboard&&navigator.clipboard.writeText(ts.textContent);
+    var o=ts.textContent;ts.textContent='已复制';setTimeout(function(){ts.textContent=o},800);
+  });
+})();
+</script></body></html>
