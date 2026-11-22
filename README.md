@@ -17,7 +17,36 @@
 
 ---
 
-## 怎么用
+## 如何使用
+
+**请把下面这段提示词复制粘贴给你的 Agent**，它会自己把技能装好；装完你再发视频链接就行。
+
+```text
+请帮我安装一个技能：hennysky-bili-lecture-digest，用来把 B 站视频转成可搜索的 HTML 讲义。
+
+来源：GitHub 仓库 https://github.com/hennysky/skills ，技能在 hennysky-bili-lecture-digest 目录里。
+
+请按顺序做：
+1. 下载仓库：git clone --depth 1 https://github.com/hennysky/skills.git
+2. 把 hennysky-bili-lecture-digest 整个文件夹复制到你自己的技能目录（例如 ~/.claude/skills、~/.agents/skills、~/.workbuddy/skills，按你实际使用的客户端选）。
+3. 进入该文件夹，运行：python3 scripts/doctor.py
+   它会列出缺什么：
+   - 缺 ffmpeg 或 whisper-cli：macOS 执行 brew install ffmpeg whisper-cpp
+   - 缺模型：按脚本提示下载到 ~/models/whisper/ggml-large-v3-turbo.bin（约 1.5 GB，只需一次）
+4. 装完再跑一次 doctor.py，确认全部 PASS。
+5. 读一遍 SKILL.md，了解使用流程。
+
+完成后告诉我「已装好」，并告诉我：以后直接把 B 站链接发给你就行。
+如果中途需要我手动操作（没有 Homebrew、没有权限、或者是 Windows 系统），停下来把具体命令发给我。
+```
+
+> 它只往你的技能目录写一个文件夹；依赖是 ffmpeg 与 whisper.cpp，模型 1.5 GB；转写全程在本机跑，视频不上传。
+
+---
+
+## 手动安装（可选）
+
+不想复制提示词，就按下面步骤手动来。
 
 每个技能文件夹里都有一份 `SKILL.md`——这是给 AI 读的说明书，也是技能的入口。
 
