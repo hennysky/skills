@@ -19,28 +19,75 @@
 
 ## 如何使用
 
-**请把下面这段提示词复制粘贴给你的 Agent**，它会自己把技能装好；装完你再发视频链接就行。
+每个技能一段提示词。**只复制你要的那一段**发给 Agent，它就会只装这一个技能，其它不会动。
+
+装完再按对应方式使用；遇到装不上，Agent 会停下来把命令给你。
+
+### 视频转讲义 · `hennysky-bili-lecture-digest`
 
 ```text
-请帮我安装一个技能：hennysky-bili-lecture-digest，用来把 B 站视频转成可搜索的 HTML 讲义。
+请帮我安装技能 hennysky-bili-lecture-digest（把 B 站视频转成可搜索的 HTML 讲义）。
 
-来源：GitHub 仓库 https://github.com/hennysky/skills ，技能在 hennysky-bili-lecture-digest 目录里。
+来源：https://github.com/hennysky/skills ，只需要仓库里的 hennysky-bili-lecture-digest 这一个文件夹。
 
-请按顺序做：
 1. 下载仓库：git clone --depth 1 https://github.com/hennysky/skills.git
-2. 把 hennysky-bili-lecture-digest 整个文件夹复制到你自己的技能目录（例如 ~/.claude/skills、~/.agents/skills、~/.workbuddy/skills，按你实际使用的客户端选）。
-3. 进入该文件夹，运行：python3 scripts/doctor.py
-   它会列出缺什么：
-   - 缺 ffmpeg 或 whisper-cli：macOS 执行 brew install ffmpeg whisper-cpp
-   - 缺模型：按脚本提示下载到 ~/models/whisper/ggml-large-v3-turbo.bin（约 1.5 GB，只需一次）
-4. 装完再跑一次 doctor.py，确认全部 PASS。
-5. 读一遍 SKILL.md，了解使用流程。
+2. 只把 hennysky-bili-lecture-digest 复制到你的技能目录（例如 ~/.agents/skills、~/.workbuddy/skills、~/.claude/skills），其它技能不要装。
+3. 进入该文件夹，运行 python3 scripts/doctor.py，按它列出的缺项安装：
+   - ffmpeg / whisper-cli：macOS 执行 brew install ffmpeg whisper-cpp
+   - 模型：下载到 ~/models/whisper/ggml-large-v3-turbo.bin（约 1.5 GB，只需一次）
+4. 再跑一次 doctor.py，全部 PASS 即成功。
+5. 读 SKILL.md，之后我直接把 B 站链接发给你。
 
-完成后告诉我「已装好」，并告诉我：以后直接把 B 站链接发给你就行。
-如果中途需要我手动操作（没有 Homebrew、没有权限、或者是 Windows 系统），停下来把具体命令发给我。
+完成后告诉我「已装好」。需要我手动操作时（没 Homebrew / 没权限 / Windows），停下来把命令发我。
 ```
 
-> 它只往你的技能目录写一个文件夹；依赖是 ffmpeg 与 whisper.cpp，模型 1.5 GB；转写全程在本机跑，视频不上传。
+### 可视化规划 · `hennysky-visual-planning`
+
+```text
+请帮我安装技能 hennysky-visual-planning（把方案做成带交互图的独立网页）。
+
+来源：https://github.com/hennysky/skills ，只需要仓库里的 hennysky-visual-planning 这一个文件夹。
+
+1. 下载仓库：git clone --depth 1 https://github.com/hennysky/skills.git
+2. 只把 hennysky-visual-planning 复制到你的技能目录（例如 ~/.agents/skills、~/.workbuddy/skills、~/.claude/skills），其它技能不要装。
+3. 确认本机有 Node.js 18 以上（node -v），没有就先装。
+4. 进入该文件夹，运行 node bin/visualplan.mjs doctor，27 项全 [ok] 且出现 VisualPlan is ready. 即成功。
+5. 读 SKILL.md，之后我让你画图时直接用。
+
+完成后告诉我「已装好」。如果我是 WorkBuddy 环境，提醒我调用时要加 env -u NODE_OPTIONS。
+```
+
+### 汇报 · `hennysky-report-briefing`
+
+```text
+请帮我安装技能 hennysky-report-briefing（把工作内容做成能交出去的汇报）。
+
+来源：https://github.com/hennysky/skills ，只需要仓库里的 hennysky-report-briefing 这一个文件夹。
+
+1. 下载仓库：git clone --depth 1 https://github.com/hennysky/skills.git
+2. 只把 hennysky-report-briefing 复制到你的技能目录（例如 ~/.agents/skills、~/.workbuddy/skills、~/.claude/skills），其它技能不要装。
+3. 这个技能没有额外依赖，不需要装任何东西。
+4. 读 SKILL.md；然后用一句「帮我做一份本期双周汇报的大纲」验证它能跑通，能先出大纲再填内容就对了。
+5. 之后我让你写汇报时直接用。
+
+完成后告诉我「已装好」。
+```
+
+### Buddy 积分 · `hennysky-buddy-checkin`
+
+```text
+请帮我安装技能 hennysky-buddy-checkin（自动领取 Buddy 加油站积分）。
+
+来源：https://github.com/hennysky/skills ，只需要仓库里的 hennysky-buddy-checkin 这一个文件夹。
+
+1. 下载仓库：git clone --depth 1 https://github.com/hennysky/skills.git
+2. 只把 hennysky-buddy-checkin 复制到你的技能目录（例如 ~/.agents/skills、~/.workbuddy/skills、~/.claude/skills），其它技能不要装。
+3. 进入该文件夹，运行 python3 scripts/claim.py doctor 自检（缺 Playwright 不用管，第一次运行会自动装）。
+4. 运行 python3 scripts/claim.py login，弹出的页面需要我本人微信扫码，扫完告诉我。
+5. 再运行 python3 scripts/claim.py claim，看到 OVERALL OK 即成功；然后读 SKILL.md，帮我建一个每天 9:30 的自动任务。
+
+完成后告诉我「已装好」。登录态只存在本机，不要提交到任何仓库。
+```
 
 ---
 
