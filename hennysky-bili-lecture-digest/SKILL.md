@@ -117,6 +117,57 @@ python3 $SKILL/scripts/frames.py ~/Desktop/讲义/<名字> --url "<视频流>" -
 - 不确定的数字标「待核」，不要四舍五入成确定值。
 - 表格用 `|` 语法；公式用 `$...$` / `$$...$$`（页面内置 LaTeX 子集渲染：分数、根号、上下标、希腊字母）。
 
+#### 给拆解加图（可选，但推荐）
+
+`analysis.md` 里可以直接写 HTML 的 `<figure>`，构建器会原样输出。四种现成组件，复制改字即可：
+
+```html
+<figure class="fig">
+<div class="flow">
+<span class="node accent">第一步</span><span class="arrow">→</span>
+<span class="node">第二步</span><span class="arrow">→</span>
+<span class="node ghost">第三步</span>
+</div>
+<figcaption><span class="fno">图 · 1</span>一句话说清这张图想让人记住什么。</figcaption>
+</figure>
+```
+
+```html
+<figure class="fig">
+<ul class="tree">
+  <li class="q">要判断的问题？</li>
+  <li class="no">否 → <b>走另一条路</b></li>
+  <li class="yes">是 → <span class="q">下一个问题？</span>
+    <ul><li class="yes">是 → <b>结论</b></li><li class="no">否 → <b>另一个结论</b></li></ul>
+  </li>
+</ul>
+<figcaption>决策树：每一层只问一个是非题。</figcaption>
+</figure>
+```
+
+```html
+<figure class="fig">
+<div class="steps4">
+  <div class="st"><span class="num">1</span><b>步骤名</b><small>一句解释</small></div>
+  <div class="st"><span class="num">2</span><b>步骤名</b><small>一句解释</small></div>
+</div>
+<figcaption>把并列的几步摊开。</figcaption>
+</figure>
+```
+
+```html
+<figure class="fig">
+<div class="pipe">
+  <span class="pnode">输入</span><span class="parrow">→</span>
+  <span class="pnode">处理</span><span class="parrow">→</span>
+  <span class="pnode accent">产出</span>
+</div>
+<figcaption>流水线：强调最后一个节点。</figcaption>
+</figure>
+```
+
+规矩：`<figure>` 前后各留一个空行；一张图只讲一件事；图注不超过两行；编号手写 `图 · N`，没有就不写。
+
 ### 第 5 步：生成页面与自检
 
 ```bash
@@ -136,7 +187,7 @@ python3 $SKILL/scripts/check.py       ~/Desktop/讲义/<名字>
 |---|---|
 | 逐字稿覆盖 | 最后一段 ≥ 视频时长的 85% |
 | 语速密度 | 200–350 字/分钟（偏离说明音频有问题或语言不同） |
-| 页面 | 无外链、可离线、移动端不横向溢出、搜索可用 |
+| 页面 | 无外链、可离线、移动端不横向溢出、搜索可用；深/浅色与字号三档可用 |
 | 拆解 | 每个结论有时间戳；缺口清单非空 |
 | 自检 | `check.py` 退出码 0 |
 
