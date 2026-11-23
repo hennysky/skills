@@ -3,7 +3,7 @@ name: hennysky-bili-lecture-digest
 description: 把 B 站视频或本地音视频转成可检索的单文件 HTML 讲义：本地 whisper 转写逐字稿、切章节、写拆解、生成页面并自检。当用户给出 B 站链接/BV 号/视频文件，说「提取文字稿、转文字、拆解视频、做成讲义页、存档课程、把课程转成网页」时使用，也适合批量处理课程视频。技能名 hennysky-bili-lecture-digest（旧名 bili-lecture-digest 的调用意图同样命中）。
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   author: "hennysky"
   date: "2026-11-23"
 ---
