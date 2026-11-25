@@ -2,6 +2,7 @@
 name: hennysky-haina-selection-daily
 description: 海纳艺术选品日报全流程。当用户说「跑一下今天的选品日报」「新品日报」「看看今天的新品」「抓选品图」「生成看图报告」「选品日报+抓图」等，或要求从海纳 selection 数据库拉取新品数据并产出报告时使用。自动完成：调取 haina-selection MCP 数据 → 生成文字日报 → 批量抓取商品图 → 逐张看图纠正标题推断 → 产出分级看图报告 HTML → 打开预览。适用于亚马逊装饰画选品的每日行情扫描。
 agent_created: true
+version: 1.1.1
 ---
 
 # 海纳选品日报（端到端）
@@ -11,6 +12,8 @@ agent_created: true
 把「拉数据 → 出日报 → 抓图 → 看图 → 出报告」固化为一条龙。用户说一句话即可跑完全过程，无需中途确认。服务对象是亚马逊装饰画选品，产出物是一份可以直接翻着看的看图报告。
 
 数据源是自定义 MCP `haina-selection`（配置在 `~/.workbuddy/mcp.json`），**不是**官方连接器，不会出现在 `list_installed_plugins` 里。
+
+数据从哪来、每天几点更新、哪些地方会缺、缺了意味着什么——见 `references/system-overview.md`。
 
 ## 铁律（先看这三条）
 
