@@ -2,6 +2,8 @@
 
 ## 1.1.1 — 2026-11-25
 
+- 新增系统全链路图：`assets/selection-system-overview.png`（README 用截图）与 `assets/selection-system-overview.html`（带动效的交互版），并嵌进 `references/system-overview.md`。看图就能明白数据从哪来、经过哪些处理、哪些平台会受阻。
+
 - 新增 `references/system-overview.md`：把服务侧的链路、每日时间线、数据契约、六道门槛、MCP 工具、无图的四类原因与已知限制写清楚，回答「数据从哪来、为什么会缺」这类问题，不再需要口头解释。
 - `SKILL.md` frontmatter 增加 `version` 字段，与 CHANGELOG 对齐，避免版本号只存在于某一份文件里。
 
