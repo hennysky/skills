@@ -14,6 +14,14 @@
 | [hennysky-bili-lecture-digest](./hennysky-bili-lecture-digest/) | 1.1.0 | 把 B 站视频转成可离线搜索的单文件 HTML 讲义：本地转写逐字稿、写拆解、生成页面并自检 | ffmpeg、whisper.cpp、1.5 GB 模型 |
 | [hennysky-haina-selection-daily](./hennysky-haina-selection-daily/) | 1.1.1 | 一句话跑完亚马逊装饰画选品日报：拉数据、抓图、逐张看图纠错、出分级看图报告 | 一个 haina-selection MCP 数据源（需管理员给地址和 token） |
 
+### 海纳选品日报长什么样
+
+从 10 个平台采集，经六道门槛，产出看板、导出包和只读接口：
+
+![海纳选品系统全链路](./hennysky-haina-selection-daily/assets/selection-system-overview.png)
+
+想看点开关会动的版本，下载后打开 [`selection-system-overview.html`](./hennysky-haina-selection-daily/assets/selection-system-overview.html)。
+
 > 早期版本叫 `visual-planning` / `report-briefing` / `buddy-checkin`。装过旧版的，把旧文件夹删掉、按下面步骤重装一次即可，旧调用名仍然能命中。
 
 ---
