@@ -76,7 +76,7 @@ python3 <skill目录>/scripts/fetch_images.py \
 以 `assets/report_template.html` 为骨架（CSS 已写好，含商品链接样式，直接用），填入 Step 4 的逐款结论：
 - 头部 pill 统计
 - 五个分级区块，每款一张卡片（图 + 编号 + 名称 + 价格尺寸 + 真实画面 + 纠正 + 结论）
-- **每款卡片的商品链接**：取该款 `url` 字段，填进三处——`<div class="pic">` 里用 `<a href="url" target="_blank">` 包住图片；`<div class="name">` 里标题加链接 + 一个「打开商品页 ↗」按钮；无图款清单末尾也加链接。模板注释里有完整写法，照抄即可。
+- **每款卡片的商品链接**：取该款 `url` 字段，填进三处——`<div class="pic">` 里用 `<a href="url" target="_blank">` 包住图片；标题 `<div class="name">` 只给文字加链接（不要在标题后塞按钮，会错位），改在卡片底部 `why` 之后加整行链接条 `<a class="cardlink" href="url" target="_blank">在 平台名 查看商品页 ↗</a>`；无图款清单行末也加链接。模板注释里有完整写法，照抄即可。
 - 无图款清单（同样带商品链接）
 - 「看图后最该记住的纠正」对照表
 
