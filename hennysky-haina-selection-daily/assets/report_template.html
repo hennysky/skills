@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新品看图报告 · 2026-11-25</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#ffffff; --line:#e5e7eb; --ink:#1f2430; --muted:#6b7280;
+    --good:#0f9d6e; --good-bg:#e9f8f1; --warn:#c77c12; --warn-bg:#fdf3e3;
+    --niche:#5b6bb5; --niche-bg:#eef0fb; --bad:#9aa1ad; --bad-bg:#f0f1f3;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+  .wrap{max-width:1180px;margin:0 auto;padding:36px 24px 60px}
+  h1{font-size:28px;margin:0 0 8px}
+  .sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+  .bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+  .pill{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--muted)}
+  .pill b{color:var(--ink)}
+  .section{margin-bottom:36px}
+  .section h2{font-size:19px;margin:0 0 6px}
+  .section .note{color:var(--muted);font-size:13px;margin:0 0 16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .pic{background:#f0f1f3;height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .pic img{max-width:100%;max-height:100%;object-fit:contain}
+  .body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column}
+  .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .code{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.5px}
+  .name{font-size:16px;font-weight:700;margin:2px 0 8px}
+  .meta{font-size:12px;color:var(--muted);margin-bottom:10px}
+  .tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+  .t-good{color:var(--good);background:var(--good-bg)}
+  .t-warn{color:var(--warn);background:var(--warn-bg)}
+  .t-niche{color:var(--niche);background:var(--niche-bg)}
+  .t-bad{color:var(--bad);background:var(--bad-bg)}
+  .desc{font-size:13px;color:#374151;margin:0 0 10px}
+  .fix{font-size:12px;background:#fff6e8;border-left:3px solid var(--warn);padding:8px 10px;border-radius:0 6px 6px 0;margin-bottom:10px;color:#7c5310}
+  .why{font-size:13px;margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+  .why b{color:var(--ink)}
+  .nopic{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--muted);margin-bottom:10px}
+  .nopic b{color:var(--ink)}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13px}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:#f3f4f6;font-weight:600}
+  tr:last-child td{border-bottom:none}
+  .foot{margin-top:30px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <!-- 模板说明：本文件是骨架+完整样例。生成新报告时保留 <style>，替换下方所有内容为当日数据。
+       每款卡片结构：<div class="card"> 内含 pic(img) + body(top/badge、name、meta、desc、可选fix、why)。
+       badge 颜色类：t-good 值得跟进 / t-warn 谨慎 / t-niche 小众 / t-bad 常规。 -->
+  <h1>新品看图报告</h1>
+  <div class="sub">{{日期}} · 基于海纳 selection 库当天 {{N}} 款新品，逐张看真实画面后的结论</div>
+  <div class="bar">
+    <span class="pill">当天新品 <b>{{N}} 款</b></span>
+    <span class="pill">成功抓图 <b>{{抓图数}} 张</b></span>
+    <span class="pill">无图 <b>{{无图数}} 款</b></span>
+    <span class="pill">值得跟进 <b>{{跟进数}} 款</b></span>
+    <span class="pill">谨慎 <b>{{谨慎数}} 款</b></span>
+    <span class="pill">小众 <b>{{小众数}} 款</b></span>
+  </div>
+
+  <div class="section">
+    <h2>一、重点看：这 4 款值得跟进</h2>
+    <p class="note">看完真实画面后，从原来清一色「观察」里挑出来的。绿色标签=建议进入打样/对标评估。</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="pic"><img src="WF03.jpg" alt="WF03"></div>
+        <div class="body">
+          <div class="top"><span class="code">WF03 · Wayfair</span><span class="tag t-good">值得跟进</span></div>
+          <div class="name">松树雾山 2（帆布画）</div>
+          <div class="meta">$105.99 · 44x34 · 369 条评论 · 黑框</div>
+          <p class="desc">真实画面：大片留白的米白天幕下，层叠雾气漫过松林与远山，下半部深绿松树剪影，竖幅分层构图。很像新中式/侘寂风，情绪安静。</p>
+          <div class="why"><b>结论：</b>今天最值得看的一款。评论数 369 是全场最高，说明有真实走量；画面耐看、好搭软装，可作为我们自然风景线补充。风险是雾景印刷容易发灰发闷，打样时盯紧对比度。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="ETS03.jpg" alt="ETS03"></div>
+        <div class="body">
+          <div class="top"><span class="code">ETS03 · Etsy</span><span class="tag t-good">值得跟进</span></div>
+          <div class="name">肌理石膏帆布画（侘寂极简）</div>
+          <div class="meta">价格缺失 · 尺寸缺失 · 19 条评论 · 细木框</div>
+          <p class="desc">真实画面：两联米白肌理画，一幅网格状浮雕、一幅竖条纹理，配浅木细框，暖米色墙面+原木长凳，侘寂风非常正、很高级。</p>
+          <div class="fix">纠正：标题写「3 件套」，但展示图里只有 2 幅，到底几件需要再确认。</div>
+          <div class="why"><b>结论：</b>风格方向和我们侘寂/肌理线一致，审美成熟。风险是石膏肌理运输易磕碰破损、实物与图片质感差异大，必须先打样看手感。价格和尺寸没抓到，要人工补。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="S602.jpg" alt="S602"></div>
+        <div class="body">
+          <div class="top"><span class="code">S602 · Society6</span><span class="tag t-good">值得跟进</span></div>
+          <div class="name">Have You Seen Bert?（你见过伯特吗）</div>
+          <div class="meta">$18 · 8x10 · 插画师 ARTCATILLUSTRATED</div>
+          <p class="desc">真实画面：自助洗衣店里三张黄色塑料椅，中间一张蹲着一只黑猫。橙红地砖+灰绿墙面+复古洗衣海报，光影切割有叙事感，配色很高级。</p>
+          <div class="fix">纠正：之前只凭标题猜是「棕色小狗」，实际是黑猫在洗衣店。画面比预想好很多。</div>
+          <div class="why"><b>结论：</b>复古叙事插画，有故事、有记忆点，配色撞得漂亮，比普通宠物画高级。8x10 偏小，建议按放大尺寸评估细节是否撑得住；这类题材适合做系列而非单张。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="S603.jpg" alt="S603"></div>
+        <div class="body">
+          <div class="top"><span class="code">S603 · Society6</span><span class="tag t-good">值得跟进</span></div>
+          <div class="name">Waiting Game（等待游戏）</div>
+          <div class="meta">$18 · 8x10 · 插画师 ARTCATILLUSTRATED</div>
+          <p class="desc">真实画面：60 年代复古风，女子穿白背心躺在橄榄绿沙发上够地上的书，猫趴在腿边，背景是花纹墙纸和红色落地灯，地毯用红黄橙拼色。</p>
+          <div class="fix">纠正：之前是「画面看不清、无法判断」，实际是有完整构图和美术风格的复古场景插画。</div>
+          <div class="why"><b>结论：</b>和 S602 同一位画师，风格成体系，复古叙事插画有辨识度，适合成套引进。注意人物题材在我们客群里接受度要先小批量测。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>二、谨慎评估：好看到但容易翻车</h2>
+    <p class="note">橙色标签=画面本身不错，但有明确的量产/印刷/受众风险，先小样验证再定。</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="pic"><img src="ETS02.jpg" alt="ETS02"></div>
+        <div class="body">
+          <div class="top"><span class="code">ETS02 · Etsy</span><span class="tag t-warn">谨慎</span></div>
+          <div class="name">克里姆特风格蜂鸟（金色抽象）</div>
+          <div class="meta">价格缺失 · 尺寸缺失 · 13 条评论</div>
+          <p class="desc">真实画面：金色马赛克底上停着一只彩绘蜂鸟，翅膀用蓝绿紫细密镶嵌，整体是克里姆特《吻》式的金箔装饰风，视觉冲击强。</p>
+          <div class="why"><b>结论：</b>画面华丽、有记忆点，方向可作金色系列补充。风险是金箔印刷很容易显廉价发土，蜂鸟比例要协调。必须看实物印刷样，不能只看图下单。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="CB202.jpg" alt="CB202"></div>
+        <div class="body">
+          <div class="top"><span class="code">CB202 · CB2</span><span class="tag t-warn">谨慎</span></div>
+          <div class="name">Orilon 带框挂画</div>
+          <div class="meta">$499 · 54x72 · 艺术家 Ksenia Sizaya</div>
+          <p class="desc">真实画面：米白底上的黑色细线几何抽象，线条交错成不规则的网状结构，极简画廊风。但抓到的是缩略图，细节看不清。</p>
+          <div class="why"><b>结论：</b>54x72 卖 $499，大尺幅高价带框画的价格带值得研究和对标。但画面只有缩略图，需要拿到高清图才能判断构图和装裱质感。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="CB201.jpg" alt="CB201"></div>
+        <div class="body">
+          <div class="top"><span class="code">CB201 · CB2</span><span class="tag t-warn">谨慎</span></div>
+          <div class="name">Lemaire 带框挂画</div>
+          <div class="meta">$299 · 36x48 · 艺术家 Patrick St. Germain</div>
+          <p class="desc">真实画面：金箔/古铜色肌理的抽象画，表面有斑驳剥落的质感，细黑框。同样是缩略图，细节有限。</p>
+          <div class="why"><b>结论：</b>和 ETS02 一样属于金色肌理方向，CB2 用高价卖这种质感说明中高端市场认。先拿高清图确认肌理是否自然、有没有廉价金粉感。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>三、看清了，但偏小众</h2>
+    <p class="note">蓝色标签=画面看懂了，题材受众窄或风格强烈，不建议作为主力款。</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="pic"><img src="SAA02.jpg" alt="SAA02"></div>
+        <div class="body">
+          <div class="top"><span class="code">SAA02 · Saatchi Art</span><span class="tag t-niche">小众</span></div>
+          <div class="name">粉花与猫</div>
+          <div class="meta">$234 · 15.7x18.1 · 艺术家 Kitti Gebler</div>
+          <p class="desc">真实画面：红发女子抱着一只黑猫，背景是粉白色花朵与蓝绿色底，表现主义笔触，色彩浓烈、情绪强烈。</p>
+          <div class="fix">纠正：之前猜是「猫和粉花的静物」，实际主体是人物+猫，风格是表现主义人像。</div>
+          <div class="why"><b>结论：</b>艺术性强、配色抓眼，但人物情绪画在我们客群里接受度窄，且同质化高。仅作方向参考。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="SAA03.jpg" alt="SAA03"></div>
+        <div class="body">
+          <div class="top"><span class="code">SAA03 · Saatchi Art</span><span class="tag t-niche">小众</span></div>
+          <div class="name">炎热夏日里的蒙德里安</div>
+          <div class="meta">$677 · 35.4x35.4 · 限量50版已售5</div>
+          <p class="desc">真实画面：蒙德里安式红黄蓝黑几何格子里，右下角蓝格放进俯拍的泳池游泳人群，波普拼贴风，辨识度高。</p>
+          <div class="why"><b>结论：</b>创意和辨识度都强，的艺术向限量版路线，和我们的量产逻辑不同。可作潮流/pop 方向的灵感参考，不建议直接跟。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="ETS01.jpg" alt="ETS01"></div>
+        <div class="body">
+          <div class="top"><span class="code">ETS01 · Etsy</span><span class="tag t-niche">小众</span></div>
+          <div class="name">咖啡青蛙（迷你油画原作）</div>
+          <div class="meta">价格缺失 · 尺寸缺失 · 12 条评论</div>
+          <p class="desc">真实画面：手掌托着一个波浪边金色小画框，里面是厚涂笔触的绿青蛙捧着咖啡杯，画风呆萌。</p>
+          <div class="why"><b>结论：</b>确实是小尺寸原画（手掌大小），题材可爱有传播点，但走的是迷你原作/周边路线，和我们量产装饰画不是一条线。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="S601.jpg" alt="S601"></div>
+        <div class="body">
+          <div class="top"><span class="code">S601 · Society6</span><span class="tag t-niche">小众</span></div>
+          <div class="name">石榴鸡尾酒的魔力</div>
+          <div class="meta">$18 · 8x10 · 艺术家 EKATERINA ZAGORSKA</div>
+          <p class="desc">真实画面：俯拍野餐场景，绿草地上摆着红粉色调的食物、饮品和手，装饰性插画，细节丰富、配色雅致。</p>
+          <div class="fix">纠正：之前是「扁平叙事插画、细节看不清」，实际是俯拍场景写实带装饰，质感不错。</div>
+          <div class="why"><b>结论：</b>画功和细节都在线，但题材偏小众、8x10 尺寸偏小，挂大墙会显单薄。若放大要保持细节。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>四、看到了，但同质化/信息不足</h2>
+    <p class="note">灰色标签=画面确认了，但属于稳妥款或资料不全，暂不列重点。</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="pic"><img src="WF01.jpg" alt="WF01"></div>
+        <div class="body">
+          <div class="top"><span class="code">WF01 · Wayfair</span><span class="tag t-bad">常规</span></div>
+          <div class="name">雾山湖景与松林（超大尺幅）</div>
+          <div class="meta">$157.99 · 60x30 · 81 条评论 · 浅木框</div>
+          <p class="desc">真实画面：棕黄复古油画调的山水湖景，松林+湖面倒影+远山，横幅大尺寸，老派风景画质感。</p>
+          <div class="why"><b>结论：</b>画面稳妥、复古调有味道，但同类太多、辨识度低。60x30 对墙面宽度要求高。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="WF02.jpg" alt="WF02"></div>
+        <div class="body">
+          <div class="top"><span class="code">WF02 · Wayfair</span><span class="tag t-bad">常规</span></div>
+          <div class="name">优胜美地国家公园风景 3</div>
+          <div class="meta">$95.99 · 44x34 · 122 条评论</div>
+          <p class="desc">真实画面：蓝天雪峰+松林+清澈溪流与鹅卵石的写实风景，蓝绿通透、明亮干净，AI 生成的痕迹略明显。</p>
+          <div class="why"><b>结论：</b>国家公园题材受众稳，画面通透好搭，但属于写实风景常规款，缺记忆点。</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="CB203.jpg" alt="CB203"></div>
+        <div class="body">
+          <div class="top"><span class="code">CB203 · CB2</span><span class="tag t-bad">常规</span></div>
+          <div class="name">Tragectory 带框挂画</div>
+          <div class="meta">$299 · 45x45 · 仅 1 条评论</div>
+          <p class="desc">真实画面：浅蓝白底的碎片拼贴抽象画，细黑框，现代画廊风。缩略图，细节有限。</p>
+          <div class="why"><b>结论：</b>只有 1 条评论且画面信息不足，市场验证弱，先观察。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>五、没抓到图的 4 款</h2>
+    <p class="note">这些只能靠标题和价格判断，别当结论用。</p>
+    <div class="nopic"><b>MTD01 数字漂流</b> · Minted · $191 / 16x20 —— Minted 平台不让程序下载图，需人工打开商品页看。</div>
+    <div class="nopic"><b>MTD02 盛开的玉兰 1</b> · Minted · $311 / 16x20 —— 同上。从标题看是写实白玉兰，花卉题材同质化高。</div>
+    <div class="nopic"><b>MTD03 盛开的玉兰 2</b> · Minted · $416 / 18x24 —— 同上，同系列大尺寸款。</div>
+    <div class="nopic"><b>SAA01 穿过喜悦的田野</b> · Saatchi Art · $520 / 17.7x17.7 —— 商品页抓取超时，没拿到图。</div>
+  </div>
+
+  <div class="section">
+    <h2>六、看图后最该记住的 4 个纠正</h2>
+    <table>
+      <tr><th>编号</th><th>原来只凭标题的推断</th><th>看到真实画面后</th></tr>
+      <tr><td>S602</td><td>棕色长毛小狗，宠物画</td><td>黑猫坐在洗衣店黄色椅子上，复古叙事插画</td></tr>
+      <tr><td>S603</td><td>画面看不清，无法判断</td><td>女子躺沙发够书+猫，60年代复古插画</td></tr>
+      <tr><td>ETS03</td><td>3 件套石膏肌理画</td><td>展示图实际是 2 联，件数待确认</td></tr>
+      <tr><td>SAA02</td><td>猫和粉花，宠物花卉</td><td>红发女子抱黑猫，表现主义人像</td></tr>
+    </table>
+  </div>
+
+  <div class="foot">
+    图片已全部保存在同目录下（14 张 .jpg）。本报告基于逐张看真实画面整理，价格/尺寸以平台列表页显示为准，未逐 SKU 复核；Etsy 因显示日元，价格按规则置空。
+  </div>
+</div>
+</body>
+</html>
